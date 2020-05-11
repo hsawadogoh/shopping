@@ -201,7 +201,7 @@ export class ParameterService {
         description: 'Description'
       },
     ];
-    this.panniers = [];
+    this.panniers = new Array<Pannier>();
   }
 
   public addPannierProduct(pannier: Pannier): void {

@@ -27,6 +27,7 @@ export class DetailArticlePage implements OnInit {
 
   ngOnInit() {
     this.article = this.parameter.getArticle();
+    this.pannier = new Pannier();
   }
 
   async addPannier() {

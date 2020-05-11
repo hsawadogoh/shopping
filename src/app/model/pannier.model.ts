@@ -1,7 +1,10 @@
 import {Product} from './product.model';
 
-export interface Pannier {
-    item: Product;
-    qte: number;
-    amount: number;
+export class Pannier {
+    constructor(
+        public item?: Product,
+        public qte?: number,
+        public amount?: number
+    ) {
+    }
 }
