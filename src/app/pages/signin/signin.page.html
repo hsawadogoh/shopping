@@ -1,0 +1,81 @@
+
+<ion-content fullscreen="true">
+  <div class="header">
+    <h2>Shopping</h2>
+    <div class="flex">
+      <div class="border-light">
+        <div class="border-white">
+          <ion-card class="card">
+            <ion-card-header class="card-header">
+              Inscription
+            </ion-card-header>
+
+            <ion-card-content>
+              <form>
+                <ion-item>
+                  <ion-icon name="person" slot="start" size="large"></ion-icon>
+                  <ion-label position="floating">Nom</ion-label>
+                  <ion-input type="string" name="name">
+                  </ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="person" slot="start" size="large"></ion-icon>
+                  <ion-label position="floating">Prénom(s)</ion-label>
+                  <ion-input type="string" name="name">
+                  </ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="phone-portrait" slot="start" size="large"></ion-icon>
+                  <ion-label position="floating">Téléphone</ion-label>
+                  <ion-input type="string" name="email">
+                  </ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="key" slot="start" size="large"></ion-icon>
+                  <ion-label position="floating">Mot de passe</ion-label>
+                  <ion-input type="password" name="password">
+                  </ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="key" slot="start" size="large"></ion-icon>
+                  <ion-label position="floating">Confirmer le mot de passe</ion-label>
+                  <ion-input type="password" name="password">
+                  </ion-input>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-checkbox></ion-checkbox>
+                  <ion-label color="primary" class="ion-label">J'accepte les conditions</ion-label>
+                </ion-item>
+
+                <ion-button mode="ios"
+                            shape="round"
+                            expand="block"
+                            (click)="onSignin()"
+                            class="ion-button">
+                  S'inscrire
+                </ion-button>
+              </form>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-label class="ion-label-signin" routerLink="/login">
+            Avez-vous déja un compte ? Se connecter
+          </ion-label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+  </div>
+
+  <div class="footer">
+
+  </div>
+
+</ion-content>

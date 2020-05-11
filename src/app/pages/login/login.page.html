@@ -1,0 +1,61 @@
+
+<ion-content fullscreen="true">
+  <div class="header">
+    <h2>Shopping</h2>
+    <div class="flex">
+      <div class="border-light">
+        <div class="border-white">
+          <ion-card class="card">
+            <ion-card-header class="card-header">
+              Connexion
+            </ion-card-header>
+
+            <ion-card-content>
+              <form>
+                <ion-item>
+                  <ion-icon name="person" slot="start" size="large"></ion-icon>
+                  <ion-label position="floating">Username</ion-label>
+                  <ion-input type="string" [(ngModel)]="login.username" name="username">
+
+                  </ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-icon name="key" slot="start" size="large"></ion-icon>
+                  <ion-label position="floating">Password</ion-label>
+                  <ion-input type="password" [(ngModel)]="login.password" name="password">
+                  </ion-input>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-label class="ion-label" color="primary">Mot de passe oublié ?</ion-label>
+                </ion-item>
+
+                <ion-button mode="ios"
+                            shape="round"
+                            [disabled]="login.password == '' || login.username == ''"
+                            expand="block"
+                            (click)="onLogin()"
+                            class="ion-button">
+                  Se connecter
+                </ion-button>
+              </form>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-label class="ion-label-signin" routerLink="/signin">
+            Vous n'avez pas de compte ? S'inscrire
+          </ion-label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+  </div>
+
+  <div class="footer">
+
+  </div>
+
+</ion-content>

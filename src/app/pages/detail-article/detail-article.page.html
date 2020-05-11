@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>
+      {{article.title}}
+    </ion-title>
+
+    <ion-icon name="share-social" size="large" slot="end"></ion-icon>
+    <ion-icon name="cart" size="large" slot="end"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-slides pager="true" mode="ios" [options]="slideOpts">
+        <ion-slide *ngFor="let picture of article.pictures">
+          <img [src]="picture" alt="null"/>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-chip color="danger">
+        <ion-label>
+          {{article.category}}
+        </ion-label>
+      </ion-chip>
+
+      <ion-chip color="primary">
+        <ion-label *ngIf="article.availability.available">Disponible</ion-label>
+        <ion-label *ngIf="!article.availability.available">Indisponible</ion-label>
+      </ion-chip>
+
+      <ion-chip color="primary">
+        <ion-label>{{article.availability.type}}</ion-label>
+      </ion-chip>
+
+      <ion-chip>
+        <ion-label color="dark">{{article.state}}</ion-label>
+      </ion-chip>
+
+      <ion-chip>
+        <ion-label color="dark">{{article.city}}</ion-label>
+      </ion-chip>
+
+      <p>
+        <span>Prix: {{article.price | number}} F CFA</span> &nbsp; &nbsp;
+        <span *ngIf="article.averageStart >=1">
+          <ion-icon name="star" color="warning"></ion-icon>
+        </span>
+        <span *ngIf="article.averageStart >=2">
+          <ion-icon name="star" color="warning"></ion-icon>
+        </span>
+        <span *ngIf="article.averageStart >=3">
+          <ion-icon name="star" color="warning"></ion-icon>
+        </span>
+        <span *ngIf="article.averageStart >=4">
+          <ion-icon name="star" color="warning"></ion-icon>
+        </span>
+        <span *ngIf="article.averageStart >=5">
+          <ion-icon name="star" color="warning"></ion-icon>
+        </span>
+      </p>
+      <br>
+
+      <p>
+        Frais de livraison: {{article.availability.feed | number}} F CFA
+      </p> <br>
+
+      <p>
+        {{article.description}}
+      </p>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="9">
+                  <ionic5-star-rating #rating
+                                      activeIcon = "star"
+                                      defaultIcon = "star"
+                                      activeColor = "#ffca18"
+                                      defaultColor = "#c3c3c3"
+                                      readonly = "false"
+                                      rating = "5"
+                                      fontSize = "32px">
+                  </ionic5-star-rating>
+                </ion-col>
+                <ion-col size="3">
+                    <ion-button color="primary">Noter</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col size="10" offset="1">
+      <ion-button mode="ios"
+                  (click)="addPannier()"
+                  expand="block">
+        <ion-icon name="cart" slot="start"></ion-icon>
+        Ajouter au panier
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

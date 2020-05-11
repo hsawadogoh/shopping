@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Shopping
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item *ngFor="let article of articles" (click)="onShowDetatil(article)">
+            <ion-thumbnail slot="start">
+              <img [src]="article.pictures[1]" alt="">
+            </ion-thumbnail>
+            <ion-label>
+              <h2>
+                {{article.title}}
+              </h2>
+              <p>
+                {{article.description}}...
+              </p>
+              <p>
+                {{article.price | number}} F CFA
+              </p>
+              <p>
+        <span *ngIf="article.averageStart >=1">
+          <ion-icon name="star" color="warning"></ion-icon>
+        </span>
+                <span *ngIf="article.averageStart >=2">
+          <ion-icon name="star" color="warning"></ion-icon>
+        </span>
+                <span *ngIf="article.averageStart >=3">
+          <ion-icon name="star" color="warning"></ion-icon>
+        </span>
+                <span *ngIf="article.averageStart >=4">
+          <ion-icon name="star" color="warning"></ion-icon>
+        </span>
+                <span *ngIf="article.averageStart >=5">
+          <ion-icon name="star" color="warning"></ion-icon>
+        </span>
+
+              </p>
+            </ion-label>
+            <ion-icon slot="end" name="arrow-forward" color="primary"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col size="10" offset="1">
+      <ion-button mode="ios"
+                  expand="block">
+        <ion-icon name="camera" slot="start"></ion-icon>
+        Vendre vos biens
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
