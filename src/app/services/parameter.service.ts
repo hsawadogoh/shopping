@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Product} from '../model/product.model';
 import {Category} from '../model/category.model';
 import {Pannier} from '../model/pannier.model';
+import {City} from '../model/city.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class ParameterService {
   private mesArticles: Product[];
   private categories: Category[];
   private panniers: Pannier[];
+  private cities: City[];
 
   constructor() {
     this.mesArticles = [
@@ -200,6 +202,32 @@ export class ParameterService {
         title: 'Autres',
         description: 'Description'
       },
+    ];
+    this.cities = [
+      {
+        id: '03',
+        name: 'Ouagadougou'
+      },
+      {
+        id: '04',
+        name: 'Banfora'
+      },
+      {
+        id: '05',
+        name: 'Kaya'
+      },
+      {
+        id: '06',
+        name: 'Koudougou'
+      },
+      {
+        id: '07',
+        name: 'Dori'
+      },
+      {
+        id: '09',
+        name: 'Bobo-Dioulasso'
+      }
     ];
     this.panniers = new Array<Pannier>();
   }

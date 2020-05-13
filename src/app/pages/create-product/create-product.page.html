@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary" class="ion-text-center">
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+      Ajout d'un nouveau produit
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="12">
+      <ion-list>
+        <ion-item-divider color="primary">
+          <ion-label>Détails du produit</ion-label>
+        </ion-item-divider>
+
+        <ion-item>
+          <ion-label position="floating">Nom</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Prix (en F CFA)</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Sélectionner la catégorie</ion-label>
+          <ion-select cancel-text="Annuler" ok-text="Ok">
+            <ion-select-option></ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Où se trouve le produit ?</ion-label>
+          <ion-select cancel-text="Annuler" ok-text="Ok">
+            <ion-select-option></ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item-divider color="primary">
+          <ion-label>Etat du produit</ion-label>
+        </ion-item-divider>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'pannier',
     loadChildren: () => import('./pages/pannier/pannier.module').then( m => m.PannierPageModule)
   },
+  {
+    path: 'create-product',
+    loadChildren: () => import('./pages/create-product/create-product.module').then( m => m.CreateProductPageModule)
+  },
 
 
 ];
