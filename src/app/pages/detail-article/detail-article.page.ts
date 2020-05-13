@@ -58,8 +58,8 @@ export class DetailArticlePage implements OnInit {
             } else {
               this.pannier.qte = data.quantite;
               this.pannier.item = this.article;
-              // this.parameter.addPannierProduct(this.pannier);
-              this.toastService.presentToast('Article ajouté avec succès!');
+              this.parameter.addPannierProduct(this.pannier);
+              this.toastService.presentToast('Article ajouté au pannier avec succès!');
             }
           }
         }

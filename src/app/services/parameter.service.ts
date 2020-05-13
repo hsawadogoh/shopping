@@ -208,6 +208,16 @@ export class ParameterService {
     this.panniers.push(pannier);
   }
 
+  public removeProductFromPannier(index: number) {
+    if (this.panniers.length === 1) {
+      this.panniers.pop();
+      this.panniers = new Array<Pannier>();
+    } else {
+      this.panniers.splice(index, 1);
+    }
+    return this.panniers;
+  }
+
   public getPannierProduct() {
     return this.panniers;
   }

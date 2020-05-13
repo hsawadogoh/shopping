@@ -1,13 +1,49 @@
 <ion-header>
   <ion-toolbar color="primary" class="ion-text-center">
     <ion-title>
-      Mon pannier
+      Mon pannier ({{pannier.length}})
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-list *ngIf="pannier.length != 0">
+        <ion-item *ngFor="let p of pannier; let index = index">
+            <ion-thumbnail slot="start">
+                <img [src]="p.item.pictures[1]" alt="">
+            </ion-thumbnail>
 
+            <ion-label>
+                <h3>{{p.item.title}}</h3>
+                <p>
+                    <ion-badge color="primary" mode="ios">{{p.qte}}</ion-badge> x {{p.item.price | number}} : {{p.qte * p.item.price | number}} F CFA
+                </p>
+                <p>
+                    Livraison: {{p.item.availability.feed | number}} F CFA
+                </p>
+                <p>
+                    Total: {{p.qte * p.item.price + p.item.availability.feed | number}} F CFA
+                </p>
+
+                <ion-button color="primary">
+                    <ion-icon name="mail"></ion-icon> &nbsp;
+                    Contacter
+                </ion-button>
+            </ion-label>
+
+            <ion-icon name="remove-circle"
+                      size="large"
+                      (click)="presentAlert(p, index)"
+                      color="danger"></ion-icon>
+
+        </ion-item>
+    </ion-list>
+
+    <ion-card *ngIf="pannier.length == 0">
+        <ion-card-header class="ion-text-center" color="primary">
+            Votre pannier est vide!
+        </ion-card-header>
+    </ion-card>
 </ion-content>
 
 <ion-footer>
@@ -20,7 +56,7 @@
 
     <ion-col size="8">
       <ion-button color="primary" fill="outline">
-        Pannier: {{2566 | number}} F CFA
+        Pannier: {{sommeTotal | number}} F CFA
       </ion-button>
     </ion-col>
   </ion-row>
