@@ -10,7 +10,7 @@
     <ion-list *ngIf="pannier.length != 0">
         <ion-item *ngFor="let p of pannier; let index = index">
             <ion-thumbnail slot="start">
-                <img [src]="p.item.pictures[1]" alt="">
+                <img [src]="p.item.pictures[1]" alt="" ionImgViewer/>
             </ion-thumbnail>
 
             <ion-label>

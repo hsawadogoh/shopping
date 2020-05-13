@@ -28,8 +28,10 @@
     "cordova-plugin-androidx-adapter": "^1.1.1",
     "cordova-plugin-lottie-splashscreen": "^0.8.1",
     "core-js": "^2.5.4",
+    "ionic-img-viewer": "^2.9.0",
     "ionic4-star-rating": "^1.1.1",
     "ionic5-star-rating": "https://github.com/JeongJun-Lee/ionic5-star-rating/tarball/master",
+    "ngx-ionic-image-viewer": "^0.7.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

@@ -10,11 +10,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {LottieSplashScreen} from '@ionic-native/lottie-splash-screen/ngx';
 import {PannierPage} from './pages/pannier/pannier.page';
+import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
 @NgModule({
   declarations: [AppComponent, PannierPage],
   entryComponents: [PannierPage],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgxIonicImageViewerModule],
   providers: [
     StatusBar,
     SplashScreen,
